@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            <th>salary</th>
+            <th>Action</th>
+        </tr>
+        {% for data in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.salary}}</td>
+            <td>
+                <a href="/delete/{{ data.id }}"><button>Delete</button></a>
+            <a href="/edit/{{ data.id }}"><button>Edit</button></a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table border="1px">
+      <tr>
+        <th>srno</th>
+        <th>name</th>
+        <th>roll</th>
+        <th>course</th>
+      </tr>
+      {% for data in data %}
+      <tr>
+          <td>{{ forloop.counter }}</td>
+          <td>{{ data.name }}</td>
+          <td>{{ data.roll }}</td>
+          <td>{{ data.course }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+  </body>
+</html>
