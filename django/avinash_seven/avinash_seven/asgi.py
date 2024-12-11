@@ -1,5 +1,5 @@
 """
-ASGI config for eight_twelve project.
+ASGI config for avinash_seven project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'eight_twelve.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'avinash_seven.settings')
 
 application = get_asgi_application()
