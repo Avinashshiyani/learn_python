@@ -1,0 +1,41 @@
+<h1>Mobile List</h1>
+<p>Logged in as: {{ user.username }}</p>
+<form method="get">
+    <input type="text" name="q" placeholder="Search by model" value="{{ query }}">
+    <button type="submit">Search</button>
+</form>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Company</th>
+            <th>Model</th>
+            <th>Price</th>
+            <th>RAM</th>
+            <th>Storage</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for mobile in mobiles %}
+        <tr>
+            <td>{{ mobile.company }}</td>
+            <td>{{ mobile.model }}</td>
+            <td>{{ mobile.price }}</td>
+            <td>{{ mobile.ram }}</td>
+            <td>{{ mobile.storage }}</td>
+            <td>
+                <form method="post" action="{{ mobile.id }}/delete/">
+                    {% csrf_token %}
+                    <button type="submit">Delete</button>
+                </form>
+            </td>
+        </tr>
+        {% empty %}
+        <tr>
+            <td colspan="6">No mobiles found.</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="/mobiles/add/">Add New Mobile</a>
+<a href="/logout/">Logout</a>
