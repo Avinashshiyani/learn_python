@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Hello {{ user.username }}</h1>
+    <table>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Department</th>
+      </tr>
+      {% for patient in patients %}
+        <tr>
+          <td>{{ loop.count }}</td>
+          <td>{{ patient.name }}</td>
+          <td>{{ patient.age }}</td>
+          <td>{{ patient.department }}</td>
+          <td>
+            <a href="/delete/{{ patient.id }}">
+              Delete
+            </a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+   
+    <a href="{% url 'logout' %}">
+      <p>Logout</p>
+    </a>
+  </body>
+</html>
